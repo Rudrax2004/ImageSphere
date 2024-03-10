@@ -1,5 +1,4 @@
-// import React, { useState , useEffect } from 'react';
-// import axios from 'axios';
+// import React, { useState } from 'react';
 // import { Link, withRouter } from 'react-router-dom';
 // import { makeStyles } from '@material-ui/core/styles';
 // import Grid from '@material-ui/core/Grid';
@@ -87,7 +86,7 @@
 // }));
 
 
-// let uniqueNames = [...new Set(wallpaperList).map(d => d.collections)].join()
+// let uniqueNames = [...new Set(wallpaperList.map(d => d.collections))].join()
 // var splitCollections = uniqueNames.split(',')
 // var distinctCollections = uniq(splitCollections)
 
@@ -96,17 +95,6 @@
 // const previewQuality = React.useState(localStorage.getItem('previewQuality'))
 
 // const [currentFilter, setCurrentFilter] = React.useState(localStorage.getItem('currentFilter') || distinctCollections[0])
-
-// const[wallpapers,addWallpapers]=useState([])
-
-//     useEffect(()=>{
-//         loadWallpapers()
-//     },[]);
-
-//     const loadWallpapers = async()=>{
-//         const result=await axios.get("http://localhost:8080/wallpapers")
-//         addWallpapers(result.data)
-//     }
 
 
 // React.useEffect(() => {
@@ -120,7 +108,7 @@
 //     <div className={classes.root}>
 //       <Grid container className={classes.gridList}>
 //         <div className={classes.chipContainer}>{distinctCollections.map((item) => <Chip onClick={() => setFilter(item) & setCurrentFilter(item)} key={uuid()} label={item} className={classes.collectionChip} color={item === updateFilter ? 'primary' : 'secondary'} />)}</div>
-//         {wallpapers.filter((tile) => tile.collections.includes(updateFilter)).map((tile) => (
+//         {wallpaperList.filter((tile) => tile.collections.includes(updateFilter)).map((tile) => (
 //           <Grid item xs={6} sm={4} md={3} lg={2} key={tile.url} className="searchContent">
 //             <Card align="center" className={classes.gridElement}>
 //             <img src={tile.thumbnail} alt={tile.name} className={classes.gridElementImage} />
@@ -144,30 +132,44 @@
 
 
 // export default withRouter(WallpapersComponent);
-import React, { useState, useEffect } from 'react';
 
-const AllWallpapersComponent = () => {
+
+
+
+import React, { useEffect, useState } from 'react';
+import Card from './Card';
+
+const WallpapersComponent = () => {
   const [images, setImages] = useState([]);
 
+
+
   useEffect(() => {
-    // Fetch images from the backend API
     fetch('http://localhost:8080/wallpapers')
-      .then(response => response.json())
-      .then(data => setImages(data));
+      .then((response) => response.json())
+      .then((data) => setImages(data))
+      .catch((error) => console.error(error));
   }, []);
 
+  // Assuming imageData is your binary image data received, for example, from an API response.
+
   return (
-    <div className="image-gallery">
-        <div class="card" style="width: 18rem;">
-        <img src="images.data" class="card-img-top" alt="..."/>
-        <div class="card-body">
-          <h5 class="card-title">{images.wallpapername}</h5>
-          <h6 class="card-text">{images.authorname}</h6>
-          <a href="#" class="btn btn-primary">View</a>
-        </div>
-      </div>
+    <div className="app">
+      {images.map((image) => (
+
+        
+        <Card
+          key={image.id}
+          image={URL.createObjectURL(new Blob([image.data]))}
+          title={image.wallpapername}
+          subtitle={image.authorname}
+        />
+
+        
+      ))}
     </div>
   );
 };
 
-export default AllWallpapersComponent
+export default WallpapersComponent;
+

@@ -44,3 +44,4 @@ const wallpaperList = [
     ]
 
 export default wallpaperList;
+

@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { primaryAccentLight, primaryAccentTextLight, secondaryAccentLight, secondaryAccentTextLight, backgroundLight, themeLight } from '../AppConfig';
 
 // Normal or default theme
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: primaryAccentLight,

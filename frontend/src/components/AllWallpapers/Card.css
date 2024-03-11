@@ -1,0 +1,30 @@
+
+/* WallpaperCard.css */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-author {
+  margin: 8px 0 0;
+  color: #666;
+  font-size: 14px;
+}

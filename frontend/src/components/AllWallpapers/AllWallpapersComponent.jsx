@@ -157,10 +157,10 @@ const WallpapersComponent = () => {
     <div className="app">
       {images.map((image) => (
 
-        
+        // console.log(image.data)
         <Card
           key={image.id}
-          image={URL.createObjectURL(new Blob([image.data]))}
+          image={`data:image/jpeg;base64,${image.data}`}
           title={image.wallpapername}
           subtitle={image.authorname}
         />

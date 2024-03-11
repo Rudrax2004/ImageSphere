@@ -25,9 +25,9 @@ const UploadPageComponent = () => {
   const handleUpload = async () => {
     // Create FormData to send file and other data
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('wallpaperName', wallpaperName);
-    formData.append('authorName', authorName);
+    formData.append('filename', file);
+    formData.append('wallpapername', wallpaperName);
+    formData.append('authorname', authorName);
 
     // Make a POST request to your backend API
     try {

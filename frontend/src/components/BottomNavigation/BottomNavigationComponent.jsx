@@ -6,6 +6,7 @@ import DashboardIcon from '@material-ui/icons/DashboardTwoTone';
 import SearchIcon from '@material-ui/icons/Search';
 import InfoIcon from '@material-ui/icons/InfoTwoTone';
 import UploadIcon from '@material-ui/icons/CloudUploadTwoTone';
+import UserIcon from '@material-ui/icons/AccountCircleTwoTone';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -33,6 +34,7 @@ function BottomNavigationBar() {
       <BottomNavigationAction component={Link} to="/search" label="Search" value="search" icon={<SearchIcon />} />
       <BottomNavigationAction component={Link} to="/info" label="Info" value="info" icon={<InfoIcon />} />
       <BottomNavigationAction component={Link} to="/upload" label="Upload" value="upload" icon={<UploadIcon />} />
+      <BottomNavigationAction component={Link} to="/user" label="Account" value="user" icon={< UserIcon/>} />
     </BottomNavigation>
     </>
   );

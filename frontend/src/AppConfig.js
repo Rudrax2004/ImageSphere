@@ -1,7 +1,8 @@
 module.exports = { 
     AppName : 'Image$phere',
     AppVersion : 'v1', 
-    primaryTheme : 'light',
+    primaryTheme : 'dark',
+    
 
     // WALLPAPER LIST STYLING
     wallpaperBorderRadius: 8,
@@ -14,6 +15,7 @@ module.exports = {
     secondaryAccentTextDark: '#000000',
     backgroundDark: '#121212',
     themeDark: '#121212', //Keep this as close to the background, if not same
+    
 
     // LIGHT THEME COLORS
     primaryAccentLight: '#2679ff',

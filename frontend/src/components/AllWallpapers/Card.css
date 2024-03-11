@@ -3,7 +3,7 @@
 {
   width: 15rem;
   border-radius: 1rem;
-  box-shadow: 0px 10px 8px #999;
+  box-shadow: 0px 10px 8px #000000;
   display: flex;
   flex-direction: column;
   margin: 0.5rem;
@@ -24,18 +24,18 @@
 }
 .card-authorname
 {
-  margin: 0.5rem 5%;
+  margin: 0.2rem 5%;
   color: #999;
 }
 
 .card-view
 {
   text-align: center;
-  width: 90%;
-  border-radius: 5px;
+  width: auto;
+  border-radius: 1rem;
   padding: 0.5rem 1rem;
   background-color: #2563eb;
   color: white;
-  text-decoration: none;
+  text-decoration:none;
   margin: 0.5rem;
 }

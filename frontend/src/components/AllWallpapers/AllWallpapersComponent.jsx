@@ -136,50 +136,19 @@
 
 
 
-// import React, { useEffect, useState } from 'react';
-// import Card from './Card.jsx';
-
-// const WallpapersComponent = () => {
-//   const [images, setImages] = useState([]);
-
-
-
-//   useEffect(() => {
-//     fetch('http://localhost:8080/wallpapers')
-//       .then((response) => response.json())
-//       .then((data) => setImages(data))
-//       .catch((error) => console.error(error));
-//   }, []);
-
-//   // Assuming imageData is your binary image data received, for example, from an API response.
-
-//   return (
-    // <div className="app">
-    //   {images.map((image) => (
-
-    //     // console.log(image.data)
-    //     <Card
-    //       key={image.id}
-    //       image={`data:image/jpeg;base64,${image.data}`}
-    //       title={image.wallpapername}
-    //       subtitle={image.authorname}
-    //     />
-
-        
-    //   ))}
-    // </div>
-//   );
-// };
-
-// export default WallpapersComponent;
 
 import React,{useEffect,useState} from 'react'
 import  MyCard  from './MyCard.jsx'
+import  './style.css'
+import FullScreenViewComponent from './FullScreenViewComponent.jsx'
 
 const WallpapersComponent = () => {
   const [images, setImages] = useState([]);
+  const [fullScreenViewProps, setFullScreenViewProps] = useState(null);
 
-
+const handleViewClick = (props) => {
+  setFullScreenViewProps(props);
+};
 
   useEffect(() => {
     fetch('http://localhost:8080/wallpapers')
@@ -189,7 +158,7 @@ const WallpapersComponent = () => {
   }, []);
 
   return (
-    <div className="app">
+    <div className="grid-list-bar">
       {images.map((image) => (
 
         // console.log(image.data)
@@ -198,10 +167,13 @@ const WallpapersComponent = () => {
           image={`data:image/jpeg;base64,${image.data}`}
           title={image.wallpapername}
           author={image.authorname}
+          handleClick={handleViewClick}
+          fullScreenViewProps={fullScreenViewProps}
         />
-
+        
         
       ))}
+        {fullScreenViewProps && <FullScreenViewComponent {...fullScreenViewProps} />}
     </div>
   )
 }

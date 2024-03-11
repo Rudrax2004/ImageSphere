@@ -1,30 +1,41 @@
 
-/* WallpaperCard.css */
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
+.card-container
+{
+  width: 15rem;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 8px #999;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  background-color: black;
+  height: fit-content;
 }
-
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card-image {
+.card-img
+{
   width: 100%;
-  height: auto;
-  border-radius: 8px 8px 0 0;
+  border-radius: 1rem 1rem 0 0;
+
+}
+.card-wallpapername
+{
+  margin: 0.5rem 5%;
+  color: white;
+
+}
+.card-authorname
+{
+  margin: 0.5rem 5%;
+  color: #999;
 }
 
-.card-title {
-  margin: 0;
-  font-size: 18px;
-}
-
-.card-author {
-  margin: 8px 0 0;
-  color: #666;
-  font-size: 14px;
+.card-view
+{
+  text-align: center;
+  width: 90%;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
 }

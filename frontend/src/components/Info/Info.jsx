@@ -40,7 +40,7 @@ function Temp() {
           <List component={ Card } variant="outlined" className={classes.card}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Pepper Dashboard" src={Icon} />
+                <Avatar alt="Imagesphere" src={Icon} />
               </ListItemAvatar>
               <ListItemText>
                 <Typography variant="h6">ImageSphere</Typography>

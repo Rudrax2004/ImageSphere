@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import GetAppIcon from '@material-ui/icons/GetAppTwoTone';
+// import GetAppIcon from '@material-ui/icons/GetAppTwoTone';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
@@ -67,16 +67,7 @@ const InfoPage = () => {
                     <AppVer />
                 </ListItem>
                 <ListItem>
-                        <Button 
-                        variant="contained"
-                        color="primary"
-                        startIcon={<GetAppIcon />}
-                        id="add-button"
-                        style={{display: 'none'}}
-                        className={classes.installButton}
-                        >
-                        INSTALL APP
-                        </Button>
+                        
                 </ListItem>
             </List>
         </Container>

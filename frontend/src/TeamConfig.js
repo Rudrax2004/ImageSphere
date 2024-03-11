@@ -1,6 +1,6 @@
 const teamInfo = [
     {
-        "name": "undefyned",
+        "name": "Rudrax Prajapati",
         "info": "Designer & Developer",
         "profileImage": "",
         "linkOne": "",
@@ -12,19 +12,7 @@ const teamInfo = [
         "linkFour": "",
         "linkFourTitle": ""
     },
-    {
-        "name": "Another name",
-        "info": "Another name's info",
-        "profileImage": "",
-        "linkOne": "",
-        "linkOneTitle": "",
-        "linkTwo": "",
-        "linkTwoTitle": "",
-        "linkThree": "",
-        "linkThreeTitle": "",
-        "linkFour": "",
-        "linkFourTitle": ""
-    },
+
     // Add additional sections here
 ]
 

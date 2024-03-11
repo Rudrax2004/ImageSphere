@@ -137,7 +137,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+import Card from './Card.jsx';
 
 const WallpapersComponent = () => {
   const [images, setImages] = useState([]);

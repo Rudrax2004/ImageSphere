@@ -137,31 +137,60 @@
 
 
 
-import React,{useEffect,useState} from 'react'
-import  MyCard  from './MyCard.jsx'
-import {  useLocation } from "react-router-dom";
-import Fab from '@material-ui/core/Fab';
-import  './style.css'
-// import FullScreenViewComponent from './FullScreenViewComponent.jsx'
+import React,{useEffect,useState} from 'react';
+import {saveAs} from 'file-saver';
+import  MyCard  from './MyCard.jsx';
+import  './style.css';
 
 const WallpapersComponent = () => {
-  const [images, setImages] = useState([]);
-  let location = useLocation();
+  const [images, setImages] = useState([])
 
 
+  // function handleDownloadClick(wallpapername) {
+  //   // Assuming a download endpoint is available, adjust the URL accordingly
+  //   const downloadUrl = `http://localhost:8080/wallpapers/db/${wallpapername}`;
 
-  const handleDownloadClick = (wallpapername) => {
-    // Assuming a download endpoint is available, adjust the URL accordingly
-    const downloadUrl = `http://localhost:8080/db/wallpapers/${wallpapername}`;
+  //   // Trigger download using an anchor tag
+  //   const downloadLink = document.createElement('a');
+  //   downloadLink.href = downloadUrl;
+  //   downloadLink.download = `wallpaper_${wallpapername}.jpeg`;
+  //   document.body.appendChild(downloadLink);
+  //   downloadLink.click();
+  //   document.body.removeChild(downloadLink);
+  // }
+  async function handleViewClick(imageName) {
+    try {
+      const downloadUrl = `http://localhost:8080/wallpapers/db/${imageName}`;
+      saveAs(downloadUrl, 'imageName.png');
+      // const blob = await response.blob();
+      // const url = window.URL.createObjectURL(new Blob([blob]));
+      // const link = document.createElement('a');
+      // link.href = url;
+      // link.setAttribute('download', imageName);
+      // document.body.appendChild(link);
+      // link.click();
+      // document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error Opening an  image:', error);
+    }
+  }
 
-    // Trigger download using an anchor tag
-    const downloadLink = document.createElement('a');
-    downloadLink.href = downloadUrl;
-    downloadLink.download = `wallpaper_${wallpapername}.jpeg`;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  };
+  async function handleDownloadClick(imageName) {
+    try {
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', imageName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error Opening an  image:', error);
+    }
+  }
+  
+
   useEffect(() => {
     fetch('http://localhost:8080/wallpapers')
       .then((response) => response.json())
@@ -169,6 +198,7 @@ const WallpapersComponent = () => {
       .catch((error) => console.error(error));
   }, []);
 
+ 
   return (
     <div className="grid-list-bar">
       {images.map((image) => (
@@ -179,7 +209,8 @@ const WallpapersComponent = () => {
           image={`data:image/jpeg;base64,${image.data}`}
           title={image.wallpapername}
           author={image.authorname}
-          handleClick={() => handleDownloadClick(image.wallpapername)}
+          handleDownloadClick={()=>handleDownloadClick(image.wallpapername)}
+          handleViewClick={()=>handleViewClick(image.wallpapername)}
           
         />
         

@@ -39,6 +39,7 @@
   color: white;
   text-decoration:none;
   margin: 0.5rem;
+  box-shadow: 0px 5px 5px grey;
 }
 .card-divider
 {

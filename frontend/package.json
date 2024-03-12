@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^1.6.7",
+    "file-saver": "^2.0.5",
     "lodash.uniq": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

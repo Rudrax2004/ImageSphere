@@ -139,17 +139,29 @@
 
 import React,{useEffect,useState} from 'react'
 import  MyCard  from './MyCard.jsx'
+import {  useLocation } from "react-router-dom";
+import Fab from '@material-ui/core/Fab';
 import  './style.css'
-import FullScreenViewComponent from './FullScreenViewComponent.jsx'
+// import FullScreenViewComponent from './FullScreenViewComponent.jsx'
 
 const WallpapersComponent = () => {
   const [images, setImages] = useState([]);
-  const [fullScreenViewProps, setFullScreenViewProps] = useState(null);
+  let location = useLocation();
 
-const handleViewClick = (props) => {
-  setFullScreenViewProps(props);
-};
 
+
+  const handleDownloadClick = (wallpapername) => {
+    // Assuming a download endpoint is available, adjust the URL accordingly
+    const downloadUrl = `http://localhost:8080/db/wallpapers/${wallpapername}`;
+
+    // Trigger download using an anchor tag
+    const downloadLink = document.createElement('a');
+    downloadLink.href = downloadUrl;
+    downloadLink.download = `wallpaper_${wallpapername}.jpeg`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
   useEffect(() => {
     fetch('http://localhost:8080/wallpapers')
       .then((response) => response.json())
@@ -167,13 +179,13 @@ const handleViewClick = (props) => {
           image={`data:image/jpeg;base64,${image.data}`}
           title={image.wallpapername}
           author={image.authorname}
-          handleClick={handleViewClick}
-          fullScreenViewProps={fullScreenViewProps}
+          handleClick={() => handleDownloadClick(image.wallpapername)}
+          
         />
         
         
       ))}
-        {fullScreenViewProps && <FullScreenViewComponent {...fullScreenViewProps} />}
+        
     </div>
   )
 }

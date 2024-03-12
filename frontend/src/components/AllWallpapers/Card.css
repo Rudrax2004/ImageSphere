@@ -9,6 +9,7 @@
   margin: 0.5rem;
   background-color: black;
   height: fit-content;
+  margin-bottom: 1rem;
 }
 .card-img
 {
@@ -28,7 +29,7 @@
   color: #999;
 }
 
-.card-view
+.card-view,.card-download
 {
   text-align: center;
   width: auto;
@@ -38,4 +39,9 @@
   color: white;
   text-decoration:none;
   margin: 0.5rem;
+}
+.card-divider
+{
+  display: flex;
+  flex-direction: row;
 }

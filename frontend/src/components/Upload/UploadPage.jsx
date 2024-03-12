@@ -31,7 +31,7 @@ const UploadPageComponent = () => {
 
     // Make a POST request to your backend API
     try {
-        const response = await axios.post('http://localhost:8080/wallpapers/db/upload', formData, {
+        const response = await axios.post('http://localhost:8080/wallpapers/db/upload',formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

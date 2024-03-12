@@ -16,6 +16,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
+    "react-to-print": "^2.15.1",
     "react-uuid": "^1.0.2",
     "redux": "^5.0.1"
   },

@@ -18,6 +18,11 @@ public class DbWallpaperService implements WallpaperService
         return wallpaperRepository.findByWallpapername(wallpapername).orElseThrow(()->
                 new RuntimeException("Wallpaper not found"));
     }
+    @Override
+    public Wallpaper getFileWallpaper(String filename) {
+        return wallpaperRepository.findByFilename(filename).orElseThrow(()->
+                new RuntimeException("Wallpaper not found"));
+    }
 
     @Override
     public Wallpaper save(MultipartFile file,String wallpapername,String authorname) throws Exception {

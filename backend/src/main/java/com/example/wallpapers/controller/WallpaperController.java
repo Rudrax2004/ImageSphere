@@ -39,6 +39,15 @@ public class WallpaperController {
                 .header(HttpHeaders.CONTENT_TYPE, wallpaper.getMimeType())
                 .body(body);
     }
+    @GetMapping("/wallpapers/db/files/{filename}")
+    public ResponseEntity<Resource> retrievefile(@PathVariable String filename) {
+        var wallpaper = wallpaperService.getFileWallpaper(filename);
+        var body = new ByteArrayResource(wallpaper.getData());
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_TYPE, wallpaper.getMimeType())
+                .body(body);
+    }
 
     @PostMapping("/wallpapers/db/upload")
     public SaveResult upload(@RequestPart MultipartFile file,@RequestPart String wallpapername,@RequestPart String authorname) {

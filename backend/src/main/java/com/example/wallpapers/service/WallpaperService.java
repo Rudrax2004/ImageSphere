@@ -5,6 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface WallpaperService {
     Wallpaper getWallpaper(String wallpapername);
+    Wallpaper getFileWallpaper(String fielname);
 
     Wallpaper save(MultipartFile file,String wallpapername,String authorname) throws Exception;
 }

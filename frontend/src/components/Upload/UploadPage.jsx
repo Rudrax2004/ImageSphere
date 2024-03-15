@@ -6,8 +6,8 @@ import './UploadPageComponent.css'; // Import your CSS file for styling
 
 const UploadPageComponent = () => {
   const [file, setFile] = useState(null);
-  const [wallpaperName, setWallpaperName] = useState('');
-  const [authorName, setAuthorName] = useState('');
+  const [wallpaperName, setWallpaperName] = useState();
+  const [authorName, setAuthorName] = useState();
   const [previewImage, setPreviewImage] = useState(null);
 
   const handleFileChange = (e) => {
@@ -25,21 +25,21 @@ const UploadPageComponent = () => {
   const handleUpload = async () => {
     // Create FormData to send file and other data
     const formData = new FormData();
-    formData.append('filename', file);
+    // formData.append('filename', file);
     formData.append('wallpapername', wallpaperName);
     formData.append('authorname', authorName);
-
+    console.log(formData)
     // Make a POST request to your backend API
-    try {
-        const response = await axios.post('http://localhost:8080/wallpapers/db/upload',formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
-        console.log(response.data); // Handle the response as needed
-      } catch (error) {
-        console.error('Error:', error);
-      }
+    // try {
+        // const response = await axios.post('http://localhost:8080/wallpapers/db/upload',formData, {
+        //   headers: {
+        //     'Content-Type': 'multipart/form-data',
+        //   },
+        // });
+      //   console.log(response); // Handle the response as needed
+      // } catch (error) {
+      //   console.error('Error:', error);
+      // }
       
   };
 

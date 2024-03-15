@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://image-sphere.vercel.app,http://localhost:3000")
 public class WallpaperController {
     @Autowired
     private WallpaperRepository wallpaperRepository;
@@ -50,7 +50,7 @@ public class WallpaperController {
     }
 
     @PostMapping("/wallpapers/db/upload")
-    public SaveResult upload(@RequestPart MultipartFile file,@RequestPart String wallpapername,@RequestPart String authorname) {
+    public SaveResult upload(@RequestParam("file") MultipartFile file,@RequestPart String wallpapername,@RequestPart String authorname) {
         try {
             var wallpaper = wallpaperService.save(file,wallpapername,authorname);
             return SaveResult.builder()

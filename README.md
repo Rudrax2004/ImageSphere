@@ -22,7 +22,7 @@ ImageSphere is a full-stack development mini-project that aims to provide users 
   - Spring Boot
   - Java
   - RESTful APIs
-  - MySQL (or any preferred database)
+  - postgreSQL (or any preferred database)
 
 **Access the App**:
    - Open your browser and visit `[https://image-sphere.vercel.app]` to explore ImageSphere.

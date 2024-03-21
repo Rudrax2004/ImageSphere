@@ -9,6 +9,7 @@ import SearchBar from './components/Header/SearchBarComponent';
 import FullscreenView from './components/AllWallpapers/FullScreenViewComponent';
 import NotFound from './components/NotFound/NotFoundPage';
 import UploadPage from './components/Upload/UploadPage';
+import AccountPage from './components/Account/AccountPage';
 
 function App() {
   return (
@@ -41,6 +42,12 @@ function App() {
             <InfoPage />
         </div> 
         } />
+        <Route exact path='/account'
+        render={() => 
+        <div>
+            <AccountPage />
+        </div> 
+        } />
         <Route path="/404" component={NotFound}/>
         <Redirect to="404" />
         </Switch>
@@ -50,3 +57,7 @@ function App() {
 }
 
 export default withRouter(App);
+
+
+
+

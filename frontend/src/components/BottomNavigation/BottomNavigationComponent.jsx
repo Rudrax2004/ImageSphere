@@ -34,7 +34,7 @@ function BottomNavigationBar() {
       <BottomNavigationAction component={Link} to="/search" label="Search" value="search" icon={<SearchIcon />} />
       <BottomNavigationAction component={Link} to="/info" label="Info" value="info" icon={<InfoIcon />} />
       <BottomNavigationAction component={Link} to="/upload" label="Upload" value="upload" icon={<UploadIcon />} />
-      <BottomNavigationAction component={Link} to="/user" label="Account" value="user" icon={< UserIcon/>} />
+      <BottomNavigationAction component={Link} to="/account" label="Account" value="user" icon={< UserIcon/>} />
     </BottomNavigation>
     </>
   );

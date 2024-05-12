@@ -27,9 +27,9 @@ function HeaderAppBar(props) {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar color="transparent" position="fixed">
+        <AppBar color="transparent" position="absolute">
           <Toolbar variant="dense" style={{width: '100%'}}>
-            <Typography variant="h5">🌐ImageSphere</Typography>
+            <Typography variant="h5" style={{color:'#65dbff'}}>Image🌐Sphere</Typography>
             <ScrollToTop />
           </Toolbar>
         </AppBar>

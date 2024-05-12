@@ -3,14 +3,17 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #24282400;
+  background-color:transparent;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
   gap: 0.5rem;
   height: fit-content;
-  box-shadow: #fbfbfb;
-  margin-top: auto;
-  margin-left: auto;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.card:hover
+{
+  filter: drop-shadow(0px 0px 30px rgb(38, 169, 209));
 }
 .card_form {
   position: relative;
@@ -38,6 +41,7 @@
 .card:hover .card_form span,
 .card:hover .card_data span {
   opacity: 1;
+  color:#65dbff;
 }
 .card_data {
   display: flex;
@@ -78,6 +82,7 @@
 }
 .card:hover .cube {
   transform: rotateX(90deg);
+  
 }
 .side {
   width: max-content;

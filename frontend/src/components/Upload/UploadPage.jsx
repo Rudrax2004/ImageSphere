@@ -1,7 +1,6 @@
-// UploadPageComponent.jsx
-
 import React, { useState } from 'react';
 import axios from 'axios';
+import mime from 'mime';
 import './UploadPageComponent.css'; // Import your CSS file for styling
 
 const UploadPageComponent = () => {
@@ -13,7 +12,7 @@ const UploadPageComponent = () => {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
-    
+
     // Display image preview
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -25,22 +24,25 @@ const UploadPageComponent = () => {
   const handleUpload = async () => {
     // Create FormData to send file and other data
     const formData = new FormData();
-    // formData.append('filename', file);
+    formData.append('file', {
+      uri: file.uri,
+      name: file.name,
+      type: mime.getType(file.uri),
+    });
     formData.append('wallpapername', wallpaperName);
     formData.append('authorname', authorName);
-    console.log(formData)
+
     // Make a POST request to your backend API
-    // try {
-        // const response = await axios.post('http://localhost:8080/wallpapers/db/upload',formData, {
-        //   headers: {
-        //     'Content-Type': 'multipart/form-data',
-        //   },
-        // });
-      //   console.log(response); // Handle the response as needed
-      // } catch (error) {
-      //   console.error('Error:', error);
-      // }
-      
+    try {
+      const response = await axios.post('https://localhost:8080/wallpapers/db/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log(response); // Handle the response as needed
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (

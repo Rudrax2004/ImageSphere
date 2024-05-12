@@ -5,7 +5,6 @@ import WallpapersComponent from './components/AllWallpapers/AllWallpapersCompone
 import BottomNavigationBar from './components/BottomNavigation/BottomNavigationComponent';
 import InfoPage from './components/Info/InfoComponent';
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
-import SearchBar from './components/Header/SearchBarComponent';
 import FullscreenView from './components/AllWallpapers/FullScreenViewComponent';
 import NotFound from './components/NotFound/NotFoundPage';
 import UploadPage from './components/Upload/UploadPage';
@@ -23,13 +22,6 @@ function App() {
         </div> 
         } />
         <Route path='/#/:name' component={FullscreenView}/>
-        <Route exact path='/search' 
-        render={() => 
-        <div>
-            <SearchBar />
-            <WallpapersComponent />
-        </div> 
-        } />
         <Route exact path='/upload'
         render={() => 
         <div>

@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import DashboardIcon from '@material-ui/icons/DashboardTwoTone';
-import SearchIcon from '@material-ui/icons/Search';
 import InfoIcon from '@material-ui/icons/InfoTwoTone';
 import UploadIcon from '@material-ui/icons/CloudUploadTwoTone';
 import UserIcon from '@material-ui/icons/AccountCircleTwoTone';
@@ -29,9 +28,8 @@ function BottomNavigationBar() {
 
   return (
     <>
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root} color="transparent" position="fixed">
+    <BottomNavigation value={value} onChange={handleChange} className={classes.root} color="transparent" position="absolute">
       <BottomNavigationAction component={Link} to="/" label="Wallpapers" value="home" icon={<DashboardIcon />} />
-      <BottomNavigationAction component={Link} to="/search" label="Search" value="search" icon={<SearchIcon />} />
       <BottomNavigationAction component={Link} to="/info" label="Info" value="info" icon={<InfoIcon />} />
       <BottomNavigationAction component={Link} to="/upload" label="Upload" value="upload" icon={<UploadIcon />} />
       <BottomNavigationAction component={Link} to="/account" label="Account" value="user" icon={< UserIcon/>} />

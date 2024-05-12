@@ -1,4 +1,4 @@
-# ImageSphere: Latest & Trending Wallpapers
+# ImageSphere 🌐 : Latest & Trending Wallpapers
 
 ImageSphere is a full-stack development mini-project that aims to provide users with a collection of high-quality wallpapers. Whether you're looking for breathtaking landscapes, adorable animals, or abstract art, ImageSphere has you covered!
 

@@ -1,4 +1,3 @@
-
 .card-container
 {
   width: 15rem;
@@ -45,4 +44,8 @@
 {
   display: flex;
   flex-direction: row;
+}
+.poster
+{
+
 }

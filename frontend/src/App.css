@@ -4,5 +4,5 @@ body::-webkit-scrollbar {
 body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    background-image: 'dark.jpg';
+    background-image: url('C:\Users\Rdx15\Documents\IT SEM-6\Imagesphere\frontend\public\dark.webp');
 }

@@ -24,18 +24,20 @@ ElevationScroll.propTypes = {
 
 function HeaderAppBar(props) {
   return (
+    <div id='header'>
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar color="inherit">
+        <AppBar color="transparent" position="fixed">
           <Toolbar variant="dense" style={{width: '100%'}}>
-            <Typography variant="h6">{AppName}</Typography>
+            <Typography variant="h5">🌐ImageSphere</Typography>
             <ScrollToTop />
           </Toolbar>
         </AppBar>
       </ElevationScroll>
       <Toolbar />
     </React.Fragment>
+    </div>
   );
 }
 export default HeaderAppBar;

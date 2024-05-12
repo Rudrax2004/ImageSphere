@@ -29,7 +29,7 @@ function BottomNavigationBar() {
 
   return (
     <>
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+    <BottomNavigation value={value} onChange={handleChange} className={classes.root} color="transparent" position="fixed">
       <BottomNavigationAction component={Link} to="/" label="Wallpapers" value="home" icon={<DashboardIcon />} />
       <BottomNavigationAction component={Link} to="/search" label="Search" value="search" icon={<SearchIcon />} />
       <BottomNavigationAction component={Link} to="/info" label="Info" value="info" icon={<InfoIcon />} />

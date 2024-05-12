@@ -5,15 +5,27 @@ import "./Card.css";
 const MyCard = ({image,title,author,handleDownloadClick,handleViewClick}) => {
   
   return (
-    <div className='card-container'>
-      <img src={image} alt={title} className='card-img' onClick={handleDownloadClick}/>
-      <h1 className='card-wallpapername'>{title}</h1>
-      <h3 className='card-authorname'>By {author}</h3>
-      <div className='card-divider'>
-      <button onClick={handleDownloadClick} className='card-view' download="Image">Download</button>
-      <button onClick={handleViewClick} className='card-view'>View</button>
-      </div>    
+
+    <div class="card">
+  <div class="card_form">
+    <span>{title}</span>
+    <img src={image} alt={title}></img>
+  </div>
+  <div class="card_data">
+    <div class="data">
+      <div class="text">
+        
+        <label class="text_m">{title}</label>
+        <div class="cube text_s">
+          <label class="side front">{author}</label>
+          <label class="side top">{author}</label>
+        </div>
+      </div>
     </div>
+    <span title="Acceder a la lista (Temas)">Downlaod</span>
+  </div>
+</div>
+
   )
 }
 

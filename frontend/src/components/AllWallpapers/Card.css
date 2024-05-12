@@ -1,51 +1,97 @@
-.card-container
-{
-  width: 15rem;
-  border-radius: 1rem;
-  box-shadow: 0px 10px 8px #000000;
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
-  background-color: rgb(0, 0, 0);
-  height: fit-content;
-  margin-bottom: 1rem;
-}
-.card-img
-{
   width: 100%;
-  border-radius: 1rem 1rem 0 0;
-
+  background-color: #24282400;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 0.5rem;
+  height: fit-content;
+  box-shadow: #fbfbfb;
+  margin-top: auto;
+  margin-left: auto;
 }
-.card-wallpapername
-{
-  margin: 0.5rem 5%;
-  color: white;
-
+.card_form {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  border-radius: 4px;
+  background-color: #00c3ff5a;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
 }
-.card-authorname
-{
-  margin: 0.2rem 5%;
-  color: #999;
+.card_form span {
+  font-size: 1.5em;
+  position: absolute;
+  inset: 0;
+  padding: 5px 10px;
+  color: #fff;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
 }
-
-.card-view,.card-download
-{
-  text-align: center;
-  width: auto;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #2563eb;
-  color: white;
-  text-decoration:none;
-  margin: 0.5rem;
-  box-shadow: 0px 5px 5px grey;
+.card:hover .card_form span,
+.card:hover .card_data span {
+  opacity: 1;
 }
-.card-divider
-{
+.card_data {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.poster
-{
-
+.card_data span {
+  color:#00c3ff9f;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+.card_data span:hover {
+  text-decoration: underline;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+}
+.text_m {
+  font-size: 18px;
+}
+.text_s {
+  color: #00c3ff9f;
+  font-size: 12px;
+}
+.cube {
+  width: max-content;
+  height: 10px;
+  transition: all 0.2s;
+  transform-style: preserve-3d;
+}
+.card:hover .cube {
+  transform: rotateX(90deg);
+}
+.side {
+  width: max-content;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.top {
+  transform: rotateX(-90deg) translate3d(0, 0, 0em);
+}
+.front {
+  transform: translate3d(0, 0, 1em);
 }
